@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+}
+body {
+    color: gold;
+    background-color: black;
+}
+/* Container */
+.container {
+    height: 50vh;
+    width: 30vw;
+    position: absolute;
+    top: 25vh;
+    left: 33vw;
+}
+/* Row */
+.row {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn {
+    width: 33%;
+    height: 100%;
+    background-color: white;
+    font-size: 5rem;
+}
+.btn:hover {
+    background-color: #e6e6e6;
+}
