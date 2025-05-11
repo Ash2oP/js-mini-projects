@@ -1,4 +1,5 @@
 let btn = document.querySelectorAll(".btn");
+let resetBtn = document.querySelector(".resetBtn");
 let bool = true;
 
 // Element Adder
@@ -14,3 +15,8 @@ btn.forEach(ele => {
         }
     })
 });
+
+// Refresh Button
+resetBtn.addEventListener("click", () => {
+    location.reload();
+})

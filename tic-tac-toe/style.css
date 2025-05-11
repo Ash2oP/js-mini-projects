@@ -7,11 +7,14 @@ body {
 }
 /* Container */
 .container {
-    height: 50vh;
+    height: 55vh;
     width: 30vw;
     position: absolute;
     top: 25vh;
     left: 33vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 /* Row */
 .row {
@@ -20,12 +23,31 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
+/* Button */
 .btn {
     width: 33%;
     height: 100%;
     background-color: white;
     font-size: 5rem;
+    border-radius: 5%;
+    color: darkblue;
 }
 .btn:hover {
+    background-color: #e6e6e6;
+}
+.resetDiv {
+    margin: 1rem;
+    height: auto;
+    width: 20%;
+}
+.resetBtn {
+    background-color: white;
+    border: none;
+    height: auto;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.resetBtn:hover {
     background-color: #e6e6e6;
 }
