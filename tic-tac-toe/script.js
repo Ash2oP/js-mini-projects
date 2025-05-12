@@ -33,16 +33,17 @@ function checkWin() {
     let posVal1 = btn[row[0]].innerText;
     let posVal2 = btn[row[1]].innerText;
     let posVal3 = btn[row[2]].innerText;
+    let bool1 = true;
 
     if(posVal1 != "" && posVal2 != "" && posVal3 != "") {
         if(posVal1 == posVal2 && posVal2 == posVal3) {
             showWin(posVal1);
-            break;
+            bool1 = false;
         }
     }
-}
-    if(count == 9){
+    if(count == 9 && bool1 == true){
         showDraw();
+    }
     }
 }
 

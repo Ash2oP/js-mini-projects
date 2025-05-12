@@ -48,7 +48,7 @@ h1 {
     border: none;
     height: auto;
     width: 100%;
-    font-size: 5vmin;
+    font-size: 3vmin;
     font-weight: 600;
     border-radius: 8%;
 }
@@ -62,13 +62,16 @@ h1 {
     width: 100vw;
     display: flex;
     align-items: center;
-    padding: 1rem 38rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 .msg span {
     background-color: #CCD5AE;
     color: #FEFAE0;
-    font-size: 2rem;
+    font-size: 5vmin;
     font-weight: 700;
+    text-align: center;
 }
 .hide {
     display: none;
