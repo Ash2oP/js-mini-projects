@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #335C67;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* Heading */
+.heading {
+    background-color: #FFF3B0;
+    color: #540B0E;
+    height: 4rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+}
+.heading span {
+    font-size: 5vmin;
+    font-weight: 600;
+}
+/* Image Container */
+.container {
+    width: 110vmin;
+    height: 40vmin;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.container button {
+    height: 60%;
+    width: 25%;
+    border: transparent;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@media (hover:hover) {
+    .container button:hover {
+    transform: scale(1.1);
+}
+}
+.rock {
+    background-image: url("images/rock.png");
+}
+.paper {
+    background-image: url("images/paper.png");
+}
+.scissors {
+    background-image: url("images/scissors.png");
+}
+/* Score Board */
+.score-board {
+    width: 110vmin;
+    height: 40vmin;
+    color: #9E2A2B;
+    align-self: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.score-player {
+    background-color: #E09F3E;
+    height: 40%;
+    width: 21%;
+    border-radius: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.score-comp {
+    background-color: #E09F3E;
+    height: 40%;
+    width: 21%;
+    border-radius: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.score-status {
+    background-color: #E09F3E;
+    height: 40%;
+    width: 60%;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.score-status span {
+    font-size: 2vmax;
+    font-weight: 600;
+}
+.score {
+    width: 80%;
+    height: 70%;
+    font-size: 5vmax;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
