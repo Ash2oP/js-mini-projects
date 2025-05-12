@@ -36,22 +36,18 @@ body {
     width: 25%;
     border: transparent;
     border-radius: 50%;
-    background-size: contain;
-    background-repeat: no-repeat;
+}
+.container button img {
+    height: 100%;
+    width: 100%;
+    border: transparent;
+    border-radius: 50%;
+    object-fit: cover;
 }
 @media (hover:hover) {
     .container button:hover {
     transform: scale(1.1);
 }
-}
-.rock {
-    background-image: url("images/rock.png");
-}
-.paper {
-    background-image: url("images/paper.png");
-}
-.scissors {
-    background-image: url("images/scissors.png");
 }
 /* Score Board */
 .score-board {
