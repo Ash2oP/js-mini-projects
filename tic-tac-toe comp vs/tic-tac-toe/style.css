@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+}
+body {
+    color: #D4A373;
+    background-color: #FAEDCD;
+}
+h1 {
+    font-size: 7vmin;
+}
+/* Container */
+.container {
+    height: 60vmin;
+    width: 60vmin;
+    margin: 10vmin auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* Row */
+.row {
+    width: 100%;
+    height: 33.3%;
+    display: flex;
+    justify-content: space-evenly;
+}
+/* Button */
+.btn {
+    width: 33.3%;
+    height: 100%;
+    background-color: #CCD5AE;
+    font-size: 8vmin;
+    border-radius: 5%;
+    color: #FEFAE0;
+}
+.btn:hover {
+    background-color: #E9EDC9;
+    cursor: pointer;
+}
+.resetDiv {
+    margin: 1rem;
+    height: 2rem;
+    width: 40%;
+}
+.resetBtn {
+    background-color: #CCD5AE;
+    color: #FEFAE0;
+    border: none;
+    height: auto;
+    width: 100%;
+    font-size: 3vmin;
+    font-weight: 600;
+    border-radius: 8%;
+}
+.resetBtn:hover {
+    background-color: #E9EDC9;
+    cursor: pointer;
+}
+/* Msg Box */
+.msg {
+    height: 20%;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+.msg span {
+    background-color: #CCD5AE;
+    color: #FEFAE0;
+    font-size: 5vmin;
+    font-weight: 700;
+    text-align: center;
+}
+.hide {
+    display: none;
+}
