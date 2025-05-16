@@ -10,7 +10,10 @@ const turnGen = () => {
     let num = Math.floor(Math.random() * 2);
     if(num == 0) {
         console.log("Computer moves first");
-        compMove();
+        let idx = Math.floor(Math.random() * 9);
+        btn[idx].innerHTML = "O";
+        btn[idx].disabled = true;
+        count++;
     }
     else {
         console.log("Player moves first");
