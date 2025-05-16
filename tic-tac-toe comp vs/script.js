@@ -21,19 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 // Computer Move Generator
-function moveDecider(arr, symbol) {
+function moveDecider(arr, val) {
     for(let row of winArr) {
     let [i, j, k] = row;
     let a = btn[row[0]].innerText;
     let b = btn[row[1]].innerText;
     let c = btn[row[2]].innerText;
-    if(a == b && a == symbol && arr.includes(k)) {
+    if(a == b && a == val && arr.includes(k)) {
         return k;
     }
-    if(a == c && a == symbol && arr.includes(j)) {
+    if(a == c && a == val && arr.includes(j)) {
         return j;
     }
-    if(b == c && b == symbol && arr.includes(i)) {
+    if(b == c && b == val && arr.includes(i)) {
         return i;
     }
     }
@@ -51,10 +51,11 @@ const compMove = () => {
         }
     })
 
+    // To Win
     let num = moveDecider(arr, "O");
-
+    // To Block
     if(num === null) num = moveDecider(arr, "X");
-    
+    // Random
     if(num === null) num = arr[Math.floor(arr.length * Math.random())];
 
     btn[num].innerHTML = "O";
