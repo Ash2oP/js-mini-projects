@@ -5,10 +5,40 @@ let count = 0;
 const winArr = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6],
             [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
-// Random NUmber Generator
-const randNum = (arr) => {
-    let num = Math.floor(arr.length * Math.random());
+// Turn Generator
+const turnGen = () => {
+    let num = Math.floor(Math.random() * 2);
+    if(num == 0) {
+        console.log("Computer moves first");
+        compMove();
+    }
+    else {
+        console.log("Player moves first");
+    }
+}
+document.addEventListener("DOMContentLoaded", () => {
+    turnGen();
+})
 
+// Computer Move Generator
+const moveDecider = (arr) => {
+    for(let row of winArr) {
+    let [pos1, pos2, pos3] = row;
+    let posVal1 = btn[row[0]].innerText;
+    let posVal2 = btn[row[1]].innerText;
+    let posVal3 = btn[row[2]].innerText;
+    if(posVal1 == posVal2 && posVal1 != "" && arr.includes(pos3)) {
+        return pos3;
+    }
+    if(posVal1 == posVal3 && posVal1 != "" && arr.includes(pos2)) {
+        return pos2;
+    }
+    if(posVal2 == posVal3 && posVal2 != "" && arr.includes(pos1)) {
+        return pos1;
+    }
+    }
+
+    let num = Math.floor(arr.length * Math.random());
     return arr[num];
 }
 
@@ -23,7 +53,7 @@ const compMove = () => {
         }
     })
 
-    let num = randNum(arr);
+    let num = moveDecider(arr);
 
     btn[num].innerHTML = "O";
     btn[num].disabled = true;
