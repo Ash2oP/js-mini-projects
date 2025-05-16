@@ -21,25 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 // Computer Move Generator
-const moveDecider = (arr) => {
+function moveDecider(arr, symbol) {
     for(let row of winArr) {
-    let [pos1, pos2, pos3] = row;
-    let posVal1 = btn[row[0]].innerText;
-    let posVal2 = btn[row[1]].innerText;
-    let posVal3 = btn[row[2]].innerText;
-    if(posVal1 == posVal2 && posVal1 != "" && arr.includes(pos3)) {
-        return pos3;
+    let [i, j, k] = row;
+    let a = btn[row[0]].innerText;
+    let b = btn[row[1]].innerText;
+    let c = btn[row[2]].innerText;
+    if(a == b && a == symbol && arr.includes(k)) {
+        return k;
     }
-    if(posVal1 == posVal3 && posVal1 != "" && arr.includes(pos2)) {
-        return pos2;
+    if(a == c && a == symbol && arr.includes(j)) {
+        return j;
     }
-    if(posVal2 == posVal3 && posVal2 != "" && arr.includes(pos1)) {
-        return pos1;
+    if(b == c && b == symbol && arr.includes(i)) {
+        return i;
     }
     }
-
-    let num = Math.floor(arr.length * Math.random());
-    return arr[num];
+    return null;
 }
 
 // Computer Move
@@ -53,7 +51,11 @@ const compMove = () => {
         }
     })
 
-    let num = moveDecider(arr);
+    let num = moveDecider(arr, "O");
+
+    if(num === null) num = moveDecider(arr, "X");
+    
+    if(num === null) num = arr[Math.floor(arr.length * Math.random())];
 
     btn[num].innerHTML = "O";
     btn[num].disabled = true;
@@ -84,15 +86,15 @@ resetBtn.addEventListener("click", () => {
 function checkWin() {
 
     for(let row of winArr) {
-    let posVal1 = btn[row[0]].innerText;
-    let posVal2 = btn[row[1]].innerText;
-    let posVal3 = btn[row[2]].innerText;
+    let a = btn[row[0]].innerText;
+    let b = btn[row[1]].innerText;
+    let c = btn[row[2]].innerText;
     
 
-        if(posVal1 != "" && posVal2 != "" && posVal3 != "") {
-            if(posVal1 == posVal2 && posVal2 == posVal3) {
-                if(posVal1 == "X") showWin();
-                if(posVal1 == "O") showLoose();
+        if(a != "" && b != "" && c != "") {
+            if(a == b && b == c) {
+                if(a == "X") showWin();
+                if(a == "O") showLoose();
                 gameOver = true;
                 break;
             }
