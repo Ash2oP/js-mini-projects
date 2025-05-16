@@ -55,6 +55,10 @@ const compMove = () => {
     let num = moveDecider(arr, "O");
     // To Block
     if(num === null) num = moveDecider(arr, "X");
+    // Take Center
+    if(num === null) {
+        if(arr.includes(4)) num = 4;
+    }
     // Random
     if(num === null) num = arr[Math.floor(arr.length * Math.random())];
 
