@@ -7,9 +7,9 @@ let usrCount = 0;
 let compCount = 0;
 
 // Random Number Generator
-function randNum() {
-    let num = Math.ceil(3 * Math.random());
-    return num - 1;
+const randNum = () => {
+    let num = Math.floor(3 * Math.random());
+    return num;
 }
 
 //Win Calculator
@@ -76,19 +76,19 @@ btn[2].addEventListener("click",() => {
 })
 
 // Draw Eff
-function draw(num) {
+const draw = (num) => {
     scoreStaus.innerHTML = `Draw :) ${arr[num]} && ${arr[num]}`;
     scoreStaus.style.color = "white";
 }
 
 // Win Eff
-function winEff(num, idx) {
+const winEff = (num, idx) => {
     scoreStaus.innerHTML = `You Win! ${arr[idx]} beats ${arr[num]}`;
     scoreStaus.style.color = "green";
 }
 
 // Lose Eff
-function loseEff(num, idx) {
+const loseEff = (num, idx) => {
     scoreStaus.innerHTML = `You Loose! ${arr[idx]} loses to ${arr[num]}`;
     scoreStaus.style.color = "red";
 }
