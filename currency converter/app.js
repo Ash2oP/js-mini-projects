@@ -69,13 +69,13 @@ dropdowns.forEach((dropdown, idx) => {
         }
         flags[idx].innerHTML = `<img src="https://flagsapi.com/${dropdown.value}/flat/32.png">`
         currencyRates(fromCurrency, toCurrency).then((res) => {
-            rate = res.toFixed(3);
+            rate = res;
         });
     }) 
 })
 
 btn.addEventListener("click", () => {
-    exchangeRate.innerHTML = `${amount} ${fromCurrency} = ${rate * amount} ${toCurrency}`;
+    exchangeRate.innerHTML = `${amount} ${fromCurrency} = ${(rate * amount).toFixed(3)} ${toCurrency}`;
 })
 
 
