@@ -40,7 +40,7 @@ async function populateDropdown() {
         for(let dropdown of dropdowns){
             let cntry = await fullCountryName(countryList[curr])
             if(cntry == null) cntry = "";
-            dropdown.innerHTML += `<option value="${countryList[curr]}">${curr}- ${cntry}</option>`;
+            dropdown.innerHTML += `<option value="${countryList[curr]}">${curr}- ${cntry.toUpperCase()}</option>`;
         }
     }
 }
