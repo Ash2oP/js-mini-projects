@@ -25,9 +25,23 @@ async function currencyRates(fromCurr, toCurr) {
     return finalRate;
 }
 
-for(let curr in countryList){ 
-    for(let dropdown of dropdowns){
-        dropdown.innerHTML += `<option value="${countryList[curr]}">${curr}</option>`;
+async function fullCountryName(countryCode) {
+    let response = await fetch('country.json');
+    let countryCodeList = await response.json();
+    for(let code in countryCodeList){
+        if(code == countryCode.toLowerCase()){
+            return countryCodeList[code].country_name;
+        }
+    }
+}
+
+async function populateDropdown() {
+    for(let curr in countryList){ 
+        for(let dropdown of dropdowns){
+            let cntry = await fullCountryName(countryList[curr])
+            if(cntry == null) cntry = "";
+            dropdown.innerHTML += `<option value="${countryList[curr]}">${curr}- ${cntry}</option>`;
+        }
     }
 }
 
@@ -36,7 +50,12 @@ amountBox.addEventListener("change", () => {
     if(amount == "") amount = 0;
 });
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
+
+        // This populates the dropdowns after content is loaded and stops the rest of the code from running
+        await populateDropdown();
+
+        // This only runs after dropdowns have been populated so that dropdown value is not empty
         dropdowns.forEach((dropdown, idx) => {
             for(let curr in countryList){
             if(countryList[curr] == dropdown.value){
